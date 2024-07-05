@@ -28,7 +28,6 @@ app.post("/api/mine", (req, res) => {
 });
 
 const syncChains = () => {
-  // console.log("trying to sync");
   request(
     { url: `${ROOT_NODE_ADDRESS}/api/blocks` },
     (error, response, body) => {
@@ -53,5 +52,3 @@ app.listen(PORT, () => {
   console.log(`Listening to PORT: ${PORT}`);
   syncChains();
 });
-
-// module.exports = { PORT };

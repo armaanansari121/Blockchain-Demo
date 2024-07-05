@@ -1,7 +1,6 @@
 const hexToBinary = require("hex-to-binary");
 const { GENESIS_DATA, MINE_RATE } = require("./config");
 const cryptoHash = require("./crypto-hash");
-// const fs = require("fs");
 
 class Block {
   constructor({ timestamp, prevHash, hash, data, nonce, difficulty }) {
@@ -34,11 +33,6 @@ class Block {
     } while (
       hexToBinary(hash).substring(0, difficulty) !== "0".repeat(difficulty)
     );
-    // console.log("\nTIMESTAMP : ", timestamp, "\nNONCE : ", nonce);
-    // fs.appendFile("timestamps.txt", timestamp.toString() + "\n", (err) => {
-    //   if (err) console.log("Error appending");
-    //   else console.log("Appended successfully");
-    // });
     return new Block({
       timestamp,
       nonce,
@@ -59,8 +53,3 @@ class Block {
 }
 
 module.exports = Block;
-// const genesisBlock = Block.genesis();
-// console.log(genesisBlock);
-
-// const res = Block.mineBlock({ prevBlock: genesisBlock, data: "block2" });
-// console.log(res);

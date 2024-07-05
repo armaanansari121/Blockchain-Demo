@@ -22,5 +22,3 @@ for (let i = 1; i < 500; i++) {
     `Time Taken : ${timeDiff} Difficulty : ${curBlock.difficulty} Average Time : ${averageTime}`
   );
 }
-
-// console.log(blockchain);
